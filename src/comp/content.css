@@ -29,7 +29,7 @@
 
 .main-content > h1 {
     margin: 0;
-    font-family: "Mark Pro";
+    font-family: "mark_proregular";
     font-size: 45px;
     font-weight: 800;
     width: 800px;
@@ -37,7 +37,7 @@
 
 .main-content > p {
     margin: 0;
-    font-family: "Mark Pro";
+    font-family: "mark_proregular";
     font-size: 22px;
     font-weight: 400;
     width: 500px;
@@ -54,7 +54,7 @@
     color: #fff;
     cursor: pointer;
     display: inline-flex;
-    font-family: "Mark Pro";
+    font-family: "mark_proregular";
     font-weight: 550;
     height: 48px;
     justify-content: center;
