@@ -2,7 +2,6 @@
     display: flex;
     margin: 0;
     /* justify-content: center; */
-    
 }
 
 .line-div {
@@ -29,15 +28,15 @@
 
 .main-content > h1 {
     margin: 0;
-    font-family: "mark_proregular";
-    font-size: 45px;
+    font-family: "heavy-f";
+    font-size: 2.7rem;
     font-weight: 800;
     width: 800px;
 }
 
 .main-content > p {
     margin: 0;
-    font-family: "mark_proregular";
+    font-family: "reg-f";
     font-size: 22px;
     font-weight: 400;
     width: 500px;
@@ -54,7 +53,7 @@
     color: #fff;
     cursor: pointer;
     display: inline-flex;
-    font-family: "mark_proregular";
+    font-family: "bold-f";
     font-weight: 550;
     height: 48px;
     justify-content: center;
