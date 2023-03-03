@@ -2,8 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0.5rem;
-    /* background-color: lightblue; */
+    padding-top: 0rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.0144) 0%, rgba(255, 255, 255, 0.36) 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(100px);
 }
 
 .nav-logo{
