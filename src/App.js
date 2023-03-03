@@ -1,16 +1,16 @@
+import Navbar from './component/navbar';
 import './App.css';
-import Navbar from './comp/navbar.js';
-import Content from './comp/content';
-// import SplineEx from './comp/splineEx';
+import Content from './component/content';
+
 
 function App() {
   return (
+    
     <div className="App">
-      <header className="App-header">
         <Navbar></Navbar>
+        <div className='container'>
         <Content></Content>
-        {/* <SplineEx></SplineEx> */}
-      </header>
+        </div>
     </div>
   );
 }
