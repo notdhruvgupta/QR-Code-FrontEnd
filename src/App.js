@@ -1,15 +1,18 @@
 import './App.css';
-import Navbar from './comp/navbar.js';
-import Content from './comp/content';
+import { Route, Routes } from 'react-router-dom';
+import FormApp from './forms-comp/formApp';
+import Home from './main-comp/home';
 // import SplineEx from './comp/splineEx';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Navbar></Navbar>
-        <Content></Content>
-        {/* <SplineEx></SplineEx> */}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/forms' element={<FormApp />} />
+          {/* <SplineEx></SplineEx> */}
+        </Routes>
       </header>
     </div>
   );

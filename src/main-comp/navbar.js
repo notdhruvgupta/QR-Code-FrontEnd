@@ -1,8 +1,10 @@
 import React from "react";
+import { Route, useNavigate } from "react-router-dom";
 import logo from "../images/logo2.png"
 import "./navbar.css";
 
 function Navbar() {
+    const navigate = useNavigate();
     return(
         <>
         <header>
@@ -18,7 +20,9 @@ function Navbar() {
                         <li><a href="/">Contact</a></li>
                     </ul>
                     <div className="nav-logo">
-                        <button className="nav-btn">Create QR</button>
+                        <button className="nav-btn" onClick={() => navigate('/forms')}>
+                            Create QR
+                        </button>
                     </div>
                 </div>
             </nav>
