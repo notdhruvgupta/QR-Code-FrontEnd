@@ -1,4 +1,4 @@
-import "./content.css"
+import "./content_about.css"
 
 
 export default function Content() {
