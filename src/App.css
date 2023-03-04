@@ -56,18 +56,3 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
-
-.container {
-  position: relative;
-  margin-left: 65px;
-  margin-right: 65px;
-  margin-bottom: 25px;
-  width: 92%;
-  min-height: 98%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(35px);
-
-
-}
-
-

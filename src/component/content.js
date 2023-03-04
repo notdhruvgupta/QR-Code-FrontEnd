@@ -3,7 +3,7 @@ import "./content.css"
 
 export default function Content() {
   return (
-    
+    <div className='container'>
     <div className="main-main-div">
 
       <h1>About Us</h1>
@@ -33,6 +33,7 @@ export default function Content() {
         </p>
         </div>
       </div>
+    </div>
     </div>
     
 
