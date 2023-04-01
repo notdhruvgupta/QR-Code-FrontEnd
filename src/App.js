@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import FormApp from './forms-comp/formApp';
+import FormApp from './forms-comp/parentForm/formApp';
 import Home from './main-comp/home';
 // import SplineEx from './comp/splineEx';
 
