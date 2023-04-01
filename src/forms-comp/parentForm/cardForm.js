@@ -16,19 +16,31 @@ export default function CardForm() {
         if(formPage < 4){
             setFormPage(prevPage => prevPage + 1)
         }
+        setIsTick( prevState => {
+            return prevState.map((step) => {
+                return step.id === formPage ? {...step, on: true} : step
+            })
+        })
     }
     function minFormPage() {
         if(formPage > 1){
             setFormPage(prevPage => prevPage - 1)
         }
+        setIsTick( prevState => {
+            return prevState.map((step) => {
+                return step.id === formPage ? {...step, on: false} : step
+            })
+        })
     }
+    
+
     
     const [isTick, setIsTick] = useState(mutliStepProgressArray)
     
     // function toggle(id) {
     //     setIsTick( prevState => {
     //         return prevState.map((step) => {
-    //             // return step.id === id ? {...step, on: !step.on} : step
+    //             return step.id <= formPage ? {...step, on: !step.on} : step
     //         })
     //     })
     // }
@@ -52,8 +64,6 @@ export default function CardForm() {
                 {formPage === 2 && <BusForm />}
                 {formPage === 3 && <SocForm />}
                 {formPage === 4 && <NoteForm />}
-
-                {/* <BusForm /> */}
             </div>
             <div className="btn--div">
                 <button className="next-btn" onClick={minFormPage}>Back</button>
