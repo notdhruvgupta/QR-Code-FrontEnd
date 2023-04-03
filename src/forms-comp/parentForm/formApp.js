@@ -8,10 +8,12 @@ export default function FormApp() {
         <div className="form--main">
             <Navbar/>
             <CardForm/>
-            <div className="def-form">
+            {/* <div className="def-form">
                 <h1>Profile Card</h1>
                 <p>When Scanned Users will be redirected to these details</p>
-            </div>
+            </div> */}
+            <br />
+            <br />
         </div>
     )
 }

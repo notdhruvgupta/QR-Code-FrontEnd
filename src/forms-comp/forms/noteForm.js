@@ -1,16 +1,27 @@
 import React from "react";
 import "./allForms.css"
 
-export default function NoteForm() {
+export default function NoteForm({formValue, setFormValue}) {
     return (
         <div className="form-div">
                 <h1>Notes</h1>
                 
                 <form className="per--form">
                     <label>Title</label>
-                        <input type="text" placeholder="Add a title"/>
+                        <input 
+                            name="title"
+                            value={formValue.title}
+                            type="text" 
+                            placeholder="Add a title"
+                            onChange={setFormValue}
+                        />
                     <label>Note</label>
-                        <textarea placeholder="Add Information"/>
+                        <textarea 
+                            name="note"
+                            value={formValue.note}
+                            placeholder="Add Information"
+                            onChange={setFormValue}
+                        />
                    
                 </form>
         </div>

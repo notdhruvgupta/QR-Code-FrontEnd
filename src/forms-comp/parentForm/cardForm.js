@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-// import logo from "../images/progress.png"
-// import logo2 from "../images/tick.png"
 import BusForm from "../forms/busForm";
 import NoteForm from "../forms/noteForm";
 import PerForm from "../forms/perForm";
@@ -8,9 +6,20 @@ import SocForm from "../forms/socForm"
 import "./cardForm.css"
 import StepComp from "./stepComp";
 import mutliStepProgressArray from "../data/mutliStepProgressArray.js"
+import formDataset from "../data/formDataset"
 
 export default function CardForm() {
+    const [formData, setFormData] = useState(formDataset)
     const [formPage, setFormPage] = useState(1)
+    const [isTick, setIsTick] = useState(mutliStepProgressArray)
+        
+    function handleChange(event) {
+        const {name, value} = event.target
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+    }
 
     function addFormPage() {
         if(formPage < 4){
@@ -22,28 +31,21 @@ export default function CardForm() {
             })
         })
     }
+
     function minFormPage() {
         if(formPage > 1){
             setFormPage(prevPage => prevPage - 1)
         }
         setIsTick( prevState => {
             return prevState.map((step) => {
-                return step.id === formPage ? {...step, on: false} : step
+                return step.id === formPage-1 ? {...step, on: false} : step
             })
         })
     }
-    
 
-    
-    const [isTick, setIsTick] = useState(mutliStepProgressArray)
-    
-    // function toggle(id) {
-    //     setIsTick( prevState => {
-    //         return prevState.map((step) => {
-    //             return step.id <= formPage ? {...step, on: !step.on} : step
-    //         })
-    //     })
-    // }
+    function handleSubmit() {
+        console.log(formData)
+    }
 
     const steps = isTick.map( step => (
         <StepComp
@@ -54,20 +56,22 @@ export default function CardForm() {
         />
     ))
 
+
     return(
         <div className="contain--two">
             <div className="left--div">
                 {steps}
             </div>
             <div className="right--div">
-                {formPage === 1 && <PerForm />}
-                {formPage === 2 && <BusForm />}
-                {formPage === 3 && <SocForm />}
-                {formPage === 4 && <NoteForm />}
+                {formPage === 1 && <PerForm formValue={formData} setFormValue={handleChange}/>}
+                {formPage === 2 && <BusForm formValue={formData} setFormValue={handleChange}/>}
+                {formPage === 3 && <SocForm formValue={formData} setFormValue={handleChange}/>}
+                {formPage === 4 && <NoteForm formValue={formData} setFormValue={handleChange}/>}
             </div>
             <div className="btn--div">
                 <button className="next-btn" onClick={minFormPage}>Back</button>
-                <button className="next-btn" onClick={addFormPage}>Next</button>
+                {formPage <= 3 && <button className="next-btn" onClick={addFormPage}>Next</button>}
+                {formPage === 4 && <button type="submit" className="next-btn" onClick={handleSubmit}>Submit</button> }
             </div>
         </div>
     )

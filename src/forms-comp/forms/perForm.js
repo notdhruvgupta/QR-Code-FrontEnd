@@ -1,20 +1,7 @@
 import React, { useState } from "react";
-import formDataset from "../data/formDataset";
 import "./allForms.css"
 
-export default function PerForm() {
-    const [formData, setFormData] = useState(formDataset)
-
-    function handleChange(event) {
-        setFormData(prevData => {
-            return {
-                ...prevData,
-                [event.target.name]: event.target.value
-            }
-        })
-    }
-    console.log(formData)
-
+export default function PerForm({formValue, setFormValue}) {
     return (
         <div className="form-div">
                 <h1>Personal Information</h1>
@@ -23,36 +10,34 @@ export default function PerForm() {
                     <label>Full Name</label>
                         <input 
                             name="fullName"
-                            value={formData.fullName}
+                            value={formValue.fullName}
                             type="text" 
                             placeholder="Enter you name"
-                            onChange={handleChange}
+                            onChange={setFormValue}
                         />
                     <label>Email</label>
                         <input 
                             name="email"
-                            value={formData.email}
-                            type="text" 
+                            value={formValue.email}
+                            type="email" 
                             placeholder="example@email.com"
-                            onChange={handleChange}
+                            onChange={setFormValue}
                         />
                     <label>Contact</label>
                         <input 
                             name="contact"
-                            value={formData.contact}
+                            value={formValue.contact}
                             type="text" 
                             placeholder="123-456-7890"
-                            onChange={handleChange}
+                            onChange={setFormValue}
                         />
-                    <label>Image</label>
+                    <label>Age</label>
                         <input 
-                            type="text" 
-                            placeholder="Choose Image"
-                        />
-                    <label>Date of Birth</label>
-                        <input 
-                            type="date" 
-                            placeholder="Choose Image"
+                            name="age"
+                            value={formValue.age}
+                            type="number" 
+                            placeholder="Enter Age"
+                            onChange={setFormValue}
                         />
                 </form>
         </div>

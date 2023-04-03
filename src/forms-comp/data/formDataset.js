@@ -2,5 +2,16 @@ export default {
     fullName: "",
     email: "",
     contact: "",
-    date: ""
+    age: "",
+    compName: "",
+    jobDes: "",
+    address: "",
+    website: "",
+    twitter: "",
+    linkedin: "",
+    github: "",
+    instagram: "",
+    facebook: "",
+    title: "",
+    note: ""
 }

@@ -5,12 +5,12 @@ export default [
         on: false
     },   
     {
-        name: 'Social',
+        name: 'Business',
         id: 2,
         on: false
     },   
     {
-        name: 'Business',
+        name: 'Social',
         id: 3,
         on: false
     },   

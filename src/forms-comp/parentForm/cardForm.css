@@ -55,12 +55,14 @@
 }
 
 .btn--div{
+    max-width: 25.2em;
+    width: 25.2em;
     top: 42em;
-    left: 35em;
+    left: 37em;
     position: absolute;
     display: flex;
-    gap: 15.5em;
-    justify-content: center;
+    /* gap: 15.5em; */
+    justify-content: space-between;
     /* margin: 1.5em 2em; */
     /* margin: 0 1em 0 1em; */
     /* width: 50%; */

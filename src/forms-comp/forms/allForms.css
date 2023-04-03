@@ -54,16 +54,21 @@
 
 .per--form > textarea {
     padding-top: 0.4em;
-    width: 20em;
-    max-width: 20em;
+    width: 19.3em;
+    max-width: 19.3em;
     max-height: 18em;
     min-height: 1.9em;
-    height: 1.9em;
+    height: 5em;
     font-size: 20px;
     font-family: reg-f;
-    text-indent: 0.4em;
+    padding: 0.4em;
+    /* text-indent: 0.4em; */
     border: 2px solid rgba(231, 29, 253, 0.3);
     border-radius: 6px;
     outline: none;
     transition: border 0.2s;
+}
+
+.per--form > textarea:focus {
+    border: 2px solid rgba(231, 29, 253, 0.9);
 }

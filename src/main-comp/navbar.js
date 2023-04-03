@@ -9,7 +9,7 @@ function Navbar() {
         <>
         <header>
             <nav className = "nav">
-                <div className="nav-logo">
+                <div className="nav-logo" onClick={() => navigate('/')}>
                     <img src={logo}></img>
                     <h1>QRinfo</h1>
                 </div>

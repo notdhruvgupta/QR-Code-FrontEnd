@@ -9,6 +9,7 @@
 }
 
 .nav-logo{
+    cursor: pointer;
     display: flex;
     align-items: center;
     padding-left: 2rem;
@@ -28,82 +29,45 @@
 }
 
 .nav-list{
-    list-style: none;
-    display: flex;
-    font-size: 19px;
-    font-family: "reg-f";
-    font-weight: bold;
+  list-style: none;
+  display: flex;
 }
-
+  
 .nav-list > li {
-    padding-right: 3.4rem;
+  padding-right: 2.5rem;
 }
 
-/* .nav-list > li > a {
-    border: 1.5px solid white;
-    border-radius: 7px;
-    padding: 4px 4px 3px 4px;
-    text-decoration: none;
-    color: #232526;
-    transition: .3s ease-in-out;
-}
-.nav-list > li > a:hover {
-    border-color: #232526;
-} */
 
 .nav-list > li > a {
-  padding: .5em .8em;
+  padding: .2em .2em;
   color: black;
   position: relative;
   text-decoration: none;
-  font-size: 20px;
-}
-
-.nav-list > li > a::before,
-.nav-list > li > a::after {
-  content: '';
-  height: 14px;
-  width: 14px;
-  position: absolute;
-  border-radius: 4px;
-
-  transition: all .35s ease;
-  opacity: 0;
-}
-
-.nav-list > li > a::before {
-  content: '';
-  right: 0;
-  top: 0;
-  border-top: 3px solid #8E81FF;
-  border-right: 3px solid #8E81FF;
-  border-radius: 4px;
-  transform: translate(-100%, 50%);
-}
-
-.nav-list > li > a:after {
-  content: '';
-  left: 0;
-  bottom: 0;
-  border-bottom: 3px solid #8E81FF;
-  border-left: 3px solid #8E81FF;
-  transform: translate(100%, -50%)
-}
-
-.nav-list > li > a:hover:before,
-.nav-list > li > a:hover:after{
-  transform: translate(0,0);
-  opacity: 1;
+  font-size: 1.1em;
+  font-family: "reg-f";
+  border-radius: 2px;
+  font-weight: bold;
+  background:
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 0% 2px;
+  background-position: 2px 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
 }
 
 .nav-list > li > a:hover {
-  color: #494285;
-} 
+  background-size: 100% 2px;
+}
 
 
 .nav-right{
-    display: flex;
-    padding-right: 4rem;
+  display: flex;
+  padding-right: 4rem;
 }
 
 .nav-btn{
@@ -119,13 +83,13 @@
   display: inline-flex;
   font-family: "bold-f";
   font-weight: 550;
-  height: 48px;
+  height: 2.35em;
   justify-content: center;
   line-height: 1;
   list-style: none;
   overflow: hidden;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
   position: relative;
   text-align: left;
   text-decoration: none;
@@ -135,7 +99,7 @@
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow,transform;
-  font-size: 18px;
+  font-size: 1.15em;
 }
 
 .nav-btn:focus {
