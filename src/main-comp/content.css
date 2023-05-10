@@ -1,14 +1,19 @@
 .main-main-div{
+    position: relative;
     display: flex;
     margin: 0;
     margin-top: 1rem;
+    /* border: 1px black solid; */
+    width: 100%;
+    /* height: 80dvh; */
+    overflow: hidden;
     /* justify-content: center; */
 }
 
 .line-div {
     height: 30em;
     border-radius: 100px;
-    position: relative;
+    position: absolute;
     left: 4.8em;
     top: 5em;
     width: 0.2em;
@@ -16,15 +21,35 @@
 }
 
 .main-content {
-    max-width: 600px;
+    min-width: 30em;
+    max-width: 70em;
     display: flex;
     flex-direction: column;
     margin:  5em 0 0 7em;
     gap: 2em;
+    /* border: 1px black solid; */
+}
+
+.element-d{ 
+    position: relative;
+    width: 100%;
+    /* border: 1px black solid; */
 }
 
 .spline {
+    /* position: absolute; */
+    top: -2em;
+    left: -2em;
+    margin: 0;
     transform: scale(0.85);
+    /* border: 1px black solid; */
+    z-index: -1;
+}
+
+@media (max-width: 1250px) {
+    .spline{
+        transform: scale(0.75) translatex(-7em);
+    }
 }
 
 .main-content > h1 {
@@ -32,7 +57,7 @@
     font-family: "heavy-f";
     font-size: 2.7rem;
     font-weight: 800;
-    width: 800px;
+    /* width: 800px; */
 }
 
 .main-content > p {
@@ -40,7 +65,7 @@
     font-family: "reg-f";
     font-size: 22px;
     font-weight: 400;
-    width: 500px;
+    /* width: 500px; */
 }
 
 .main-btn {

@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import FormApp from './forms-comp/parentForm/formApp';
 import Home from './main-comp/home';
+import FinalOutput from './main-comp/finalOutput';
 // import SplineEx from './comp/splineEx';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/forms' element={<FormApp />} />
+          <Route path='/output' element={<FinalOutput />} />
           {/* <SplineEx></SplineEx> */}
         </Routes>
       </header>

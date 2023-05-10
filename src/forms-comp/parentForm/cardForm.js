@@ -7,8 +7,11 @@ import "./cardForm.css"
 import StepComp from "./stepComp";
 import mutliStepProgressArray from "../data/mutliStepProgressArray.js"
 import formDataset from "../data/formDataset"
+import { Route, useNavigate } from "react-router-dom";
+
 
 export default function CardForm() {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState(formDataset)
     const [formPage, setFormPage] = useState(1)
     const [isTick, setIsTick] = useState(mutliStepProgressArray)
@@ -71,7 +74,7 @@ export default function CardForm() {
             <div className="btn--div">
                 <button className="next-btn" onClick={minFormPage}>Back</button>
                 {formPage <= 3 && <button className="next-btn" onClick={addFormPage}>Next</button>}
-                {formPage === 4 && <button type="submit" className="next-btn" onClick={handleSubmit}>Submit</button> }
+                {formPage === 4 && <button type="submit" className="next-btn" onClick={() => navigate('/output')}>Submit</button> }
             </div>
         </div>
     )
