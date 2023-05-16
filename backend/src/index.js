@@ -8,22 +8,23 @@ import QRCode from "qrcode";
 
 const server = http.createServer(app);
 
-dotenv.config({ path: './config.env'});
+dotenv.config({ path: './config.env' });
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: "*",
+    methods: "GET, HEAD, PUT, POST, PATCH, DELETE"
 }));
 
 app.get("/", (req, res) => {
     res.send("Hello to QR Code Generator API");
-    }
+}
 );
 
 const DB = process.env.CONNECTION_URL;
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || "https://qrinfo.onrender.com/";
 
 mongoose.set("strictQuery", true);
 
@@ -87,20 +88,20 @@ app.post("/users", (req, res) => {
 });
 
 app.get("/users/:infoID", (req, res) => {
-    User.findOne({_id: req.params.infoID}, function(err, foundUser){
-        if(foundUser){
+    User.findOne({ _id: req.params.infoID }, function (err, foundUser) {
+        if (foundUser) {
             res.send(foundUser);
         }
-        else{
+        else {
             res.send("No User Found");
         }
     });
 });
 
-app.get("/qrcode", (req, res) =>{
-    QRCode.toDataURL ('http://localhost:3000/userinfo',{scale: "10"}, function (err, url){
-                if(err) throw err
-                res.send(url)
+app.get("/qrcode", (req, res) => {
+    QRCode.toDataURL('http://localhost:3000/userinfo', { scale: "10" }, function (err, url) {
+        if (err) throw err
+        res.send(url)
     });
     console.log("QR fetched");
 });

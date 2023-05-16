@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import BusForm from "../forms/busForm";
 import NoteForm from "../forms/noteForm";
 import PerForm from "../forms/perForm";
@@ -7,12 +7,32 @@ import "./cardForm.css"
 import StepComp from "./stepComp";
 import mutliStepProgressArray from "../data/mutliStepProgressArray.js"
 import formDataset from "../data/formDataset"
-import { Route, useNavigate } from "react-router-dom";
+import {motion} from "framer-motion"
 
-export default function CardForm({formPage, setFormPage}) {
-    const navigate = useNavigate()
+export default function CardForm() {
+    const targetRef = useRef(null);
+    const [formPage, setFormPage] = useState(1)
     const [formData, setFormData] = useState(formDataset)
     const [isTick, setIsTick] = useState(mutliStepProgressArray)
+    const [imgState, setImg] = useState()
+    
+    const fetchUserData = async () => {
+        fetch("http://localhost:5000/qrcode")
+            .then((response) => response.text())
+            .then((user) => {
+                setImg(user)
+            })
+    }
+    
+    useEffect(() => {
+        if (formPage === 5 && targetRef.current) {
+            targetRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [formPage]);
+
+    useEffect(() => {
+        fetchUserData()
+    }, [])
         
     function handleChange(event) {
         const {name, value} = event.target
@@ -127,8 +147,16 @@ export default function CardForm({formPage, setFormPage}) {
     ))
 
     return(
-        <div className="contain--two">
-            <div className="left--div">
+        <div>
+        <motion.div 
+            className="contain--two"
+            initial={{scale: 0.75, opacity: 0}}
+            animate={{scale: 1, opacity: 1}}
+            transition={{ ease: "easeOut", duration: 1 }}
+        >
+            <div 
+                className="left--div"
+                >
                 {steps}
             </div>
             <div className="right--div">
@@ -142,6 +170,18 @@ export default function CardForm({formPage, setFormPage}) {
                 {formPage <= 3 && <button className="next-btn" onClick={addFormPage}>Next</button>}
                 {formPage >= 4 && <button type="submit" className="next-btn" onClick={onSubmit}>Submit</button> }
             </div>
+        </motion.div>
+        <br/>
+        {formPage===5 && <div className="qrCodeDiv"  ref={targetRef}>
+            <div className="qrCodeImg">
+                <img src={imgState}></img>
+            </div>
+            <div className="qrCodeText">
+                <h1>Scan this QR Code</h1>
+                <p>Redirects to the information input above</p>
+            </div>
+        </div>}
+        <br/>
         </div>
     )
 }

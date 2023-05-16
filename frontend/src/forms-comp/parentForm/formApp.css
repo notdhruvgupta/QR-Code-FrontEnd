@@ -1,6 +1,6 @@
 .form--main{
     background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../../images/bg-form1.png");
-    background-size: 100dvw;
+    background-size: cover;
     background-repeat: no-repeat;
     /* background-image: url("../images/bg-form.png"); */
     /* height: 100dvw; */
@@ -8,13 +8,9 @@
     /* background-size: cover; */
 }
 
-.smthing {
-    text-align: center;
-}
-
 
 .def-form {
-    margin: 2em 40em 0em 14.3em;
+    margin: 2em 14.5em 0em 14.3em;
     padding: 2em;
     backdrop-filter: blur(50px);
     border-radius: 10px;

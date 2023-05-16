@@ -110,3 +110,29 @@
     transition: 5s;
     transition-timing-function: cubic-bezier(0,.01,.27,.99);
 }
+
+
+.qrCodeDiv {
+    margin-top: 2em;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 1.5em;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+}
+
+.qrCodeImg > img{
+    border-radius: 1.5em;
+    position: relative;
+    padding-right: 2em;
+}
+.qrCodeText > h1{
+    margin: 0;
+    font-size: 3em;
+}
+.qrCodeText > p{
+    margin: 0;
+    font-size: 1.5em;
+}
