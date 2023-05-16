@@ -17,7 +17,7 @@ app.use(cors({
     methods: "GET, HEAD, PUT, POST, PATCH, DELETE"
 }));
 
-app.get("/", (req, res) => {
+app.get("/",cors(), (req, res) => {
     res.send("Hello to QR Code Generator API");
 }
 );
@@ -53,7 +53,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-app.get("/users", (req, res) => {
+app.get("/users",cors(), (req, res) => {
     User.find(function (err, users) {
         if (err) {
             console.log(err);
@@ -65,7 +65,7 @@ app.get("/users", (req, res) => {
     console.log("Users fetched");
 });
 
-app.post("/users", (req, res) => {
+app.post("/users",cors(), (req, res) => {
     const user = new User({
         fullName: req.body.fullName,
         email: req.body.email,
@@ -87,7 +87,7 @@ app.post("/users", (req, res) => {
     console.log("User saved");
 });
 
-app.get("/users/:infoID", (req, res) => {
+app.get("/users/:infoID",cors(), (req, res) => {
     User.findOne({ _id: req.params.infoID }, function (err, foundUser) {
         if (foundUser) {
             res.send(foundUser);
@@ -98,7 +98,7 @@ app.get("/users/:infoID", (req, res) => {
     });
 });
 
-app.get("/qrcode", (req, res) => {
+app.get("/qrcode",cors(), (req, res) => {
     QRCode.toDataURL('http://localhost:3000/userinfo', { scale: "10" }, function (err, url) {
         if (err) throw err
         res.send(url)
