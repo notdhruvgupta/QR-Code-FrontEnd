@@ -13,7 +13,7 @@ dotenv.config({ path: './config.env' });
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors({
-    origin: "*",
+    origin: "https://qrinfo.onrender.com/",
     methods: "GET, HEAD, PUT, POST, PATCH, DELETE"
 }));
 
