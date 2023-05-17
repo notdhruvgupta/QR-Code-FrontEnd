@@ -99,7 +99,7 @@ app.get("/users/:infoID",cors(), (req, res) => {
 });
 
 app.get("/qrcode",cors(), (req, res) => {
-    QRCode.toDataURL('http://localhost:3000/userinfo', { scale: "10" }, function (err, url) {
+    QRCode.toDataURL('https://qr-info-client.vercel.app/userinfo', { scale: "10" }, function (err, url) {
         if (err) throw err
         res.send(url)
     });
